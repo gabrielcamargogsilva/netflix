@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Selecione um perfil para continuar assistindo na Netflix">
+    <title>Netflix</title>
+    <link rel="icon" type="image/x-icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <button id="theme-toggle" onclick="toggleTheme()"
+            style="position:absolute;top:1rem;right:1rem;z-index:10;background:none;border:none;font-size:2rem;cursor:pointer"
+            aria-label="Alternar tema"></button>
+        <h1>Quem está assistindo?</h1>
+
+        <section aria-label="Perfis disponíveis">
+            <nav class="profiles" aria-label="Lista de perfis">
+                <ul>
+                    <li>
+                        <a href="#" class="profile">
+                            <figure>
+                                <img src="assets/perfil-1.png"
+                                    alt="Homem magro e pálido, vestido com um traje formal roxo e colete dourado, em pé dentro de um castelo gótico em miniatura, cercado por escadarias, janelas em arco e velas.">
+                                <figcaption>Gabriel</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile">
+                            <figure>
+                                <img src="assets/perfil-2.jpg"
+                                    alt="Mago em seu laboratório, cercado por pergaminhos, poções e um mapa do mundo, em um estilo de animação stop-motion.">
+                                <figcaption>Vanusa</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile">
+                            <figure>
+                                <img src="assets/perfil-3.jpg" alt="Perfil 3">
+                                <figcaption>Théo</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile">
+                            <figure>
+                                <img src="assets/perfil-4.jpg" alt="Perfil 3">
+                                <figcaption>Amanda</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="profile">
+                            <figure>
+                                <img src="assets/perfil-5.jpg" alt="Perfil 3">
+                                <figcaption>Aleatório</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </section>
+        <a href="gerenciar-perfis.html">
+            <button class="manage-profiles">Gerenciar perfis</button>
+        </a>
+    </main>
+
+    <script src="theme.js"></script>
+
+</body>
+
+</html>
