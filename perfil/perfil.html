@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Selecione um perfil para continuar assistindo na Netflix">
+    <title>Netflix</title>
+    <link rel="icon" type="image/x-icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="../index.html">
+        <img src="assets/logo-netflix.png" alt="Logo da Netflix" width="32" height="32" class="logo">
+        </a>
+        <button id="tema-trocar" onclick="trocarTema()"
+            style="position:absolute;top:1rem;right:1rem;z-index:10;background:none;border:none;font-size:2rem;cursor:pointer"
+            aria-label="Alternar tema">
+            <span class="icone-tema" aria-hidden="true">🌓</span>
+        </button>
+
+
+    </header>
+    <main class="conteudo-principal">
+
+        <h1>Quem está assistindo?</h1>
+
+
+        <ul class="lista-perfis">
+            <li class="item-perfil">
+                <a href="../catalogo/catalogo.html" class="perfil">
+                    <figure class="avatar-container">
+                        <span class="imagem-perfil tema-cris" aria-hidden="true">
+                            <span class="icone-avatar">
+                                <img src="assets/perfil-1.png" alt="Perfil de Gabriel" width="128px" height="128px">
+                            </span>
+                        </span>
+                        <figcaption class="nome-perfil">Gabriel</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li class="item-perfil">
+                <a href="../catalogo/catalogo.html" class="perfil">
+                    <figure class="avatar-container">
+                        <span class="imagem-perfil tema-cris" aria-hidden="true">
+                            <span class="icone-avatar">
+                                <img src="assets/perfil-2.jpg" alt="Perfil de Vanusa" width="128px" height="128px">
+                            </span>
+                        </span>
+                        <figcaption class="nome-perfil">Vanusa</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li class="item-perfil">
+                <a href="../catalogo/catalogo.html" class="perfil" onclick="selecionarPerfil(this)">
+                    <figure class="avatar-container">
+                        <span class="imagem-perfil tema-cris" aria-hidden="true">
+                            <span class="icone-avatar">
+                                <img src="assets/perfil-3.jpg" alt="Perfil de Théo" width="128px" height="128px">
+                            </span>
+                        </span>
+                        <figcaption class="nome-perfil">Théo</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li class="item-perfil">
+                <a href="../catalogo/catalogo.html" class="perfil">
+                    <figure class="avatar-container">
+                        <span class="imagem-perfil tema-cris" aria-hidden="true">
+                            <span class="icone-avatar">
+                                <img src="assets/perfil-4.jpg" alt="Perfil de Amanda" width="128px" height="128px">
+                            </span>
+                        </span>
+                        <figcaption class="nome-perfil">Amanda</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li class="item-perfil">
+                <a href="../catalogo/catalogo.html" class="perfil">
+                    <figure class="avatar-container">
+                        <span class="imagem-perfil tema-cris" aria-hidden="true">
+                            <span class="icone-avatar">
+                                <img src="assets/perfil-5.jpg" alt="Perfil de Aleatório" width="128px" height="128px">
+                            </span>
+                        </span>
+                        <figcaption class="nome-perfil">Aleatório</figcaption>
+                    </figure>
+                </a>
+            </li>
+
+        </ul>
+
+        <section class="gerenciar">
+            <a href="#">
+                <button class="btn-gerenciar" type="button">Gerenciar perfis</button>
+            </a>
+        </section>
+    </main>
+
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

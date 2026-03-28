@@ -4,74 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Selecione um perfil para continuar assistindo na Netflix">
-    <title>Netflix</title>
-    <link rel="icon" type="image/x-icon" href="https://assets.nflxext.com/us/ffe/siteui/common/icons/nficon2016.ico">
+    <title>Serviços de Streaming</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <main>
-        <button id="theme-toggle" onclick="toggleTheme()"
+        <button id="tema-trocar" onclick="trocarTema()"
             style="position:absolute;top:1rem;right:1rem;z-index:10;background:none;border:none;font-size:2rem;cursor:pointer"
-            aria-label="Alternar tema"></button>
-        <h1>Quem está assistindo?</h1>
+            aria-label="Alternar tema">
+            <span class="icone-tema" aria-hidden="true">🌓</span></button>
 
-        <section aria-label="Perfis disponíveis">
-            <nav class="profiles" aria-label="Lista de perfis">
-                <ul>
-                    <li>
-                        <a href="#" class="profile">
-                            <figure>
-                                <img src="assets/perfil-1.png"
-                                    alt="Homem magro e pálido, vestido com um traje formal roxo e colete dourado, em pé dentro de um castelo gótico em miniatura, cercado por escadarias, janelas em arco e velas.">
-                                <figcaption>Gabriel</figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="profile">
-                            <figure>
-                                <img src="assets/perfil-2.jpg"
-                                    alt="Mago em seu laboratório, cercado por pergaminhos, poções e um mapa do mundo, em um estilo de animação stop-motion.">
-                                <figcaption>Vanusa</figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="profile">
-                            <figure>
-                                <img src="assets/perfil-3.jpg" alt="Perfil 3">
-                                <figcaption>Théo</figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="profile">
-                            <figure>
-                                <img src="assets/perfil-4.jpg" alt="Perfil 3">
-                                <figcaption>Amanda</figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="profile">
-                            <figure>
-                                <img src="assets/perfil-5.jpg" alt="Perfil 3">
-                                <figcaption>Aleatório</figcaption>
-                            </figure>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+        <h1>Qual serviço de Streaming deseja acessar?</h1>
 
-        </section>
-        <a href="gerenciar-perfis.html">
-            <button class="manage-profiles">Gerenciar perfis</button>
-        </a>
+        <ul class="lista-servicos">
+            <li class="item-servico">
+                <a href="https://www.primevideo.com/offers/nonprimehomepage/ref=dv_web_force_root?gad_source=1&gad_campaignid=23482762750&gclid=CjwKCAjw-J3OBhBuEiwAwqZ_hxXZXmsynktlJ9eHV-ml3H_5bDN0U56ileITa_Ze5n4DlJwyzonewxoCoG8QAvD_BwE&irgwc=1&irclickid=2ee833ceN2ae611f1a4c851871a1fb62&afsrc=1&gbraid=0AAAAApxTTtj_RTIO5INp5aFNrZTjgyxvQ" class="servico">
+                    <figure class="avatar-container">
+                        <span class="imagem-perfil tema-cris" aria-hidden="true">
+                            <span class="icone-avatar">
+                                <img src="assets/prime-video.png" alt="Amazon" width="128px" height="128px">
+                            </span>
+                        </span>
+                        <figcaption class="nome-servico">Amazon Prime Video</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li class="item-servico">
+                <a href="perfil/perfil.html" class="servico" id="btn-netflix">
+                    <figure class="avatar-container">
+                        <span class="imagem-perfil tema-cris" aria-hidden="true">
+                            <span class="icone-avatar">
+                                <img src="assets/logo-netflix.png" alt="Perfil de Gabriel" width="128px" height="128px">
+                            </span>
+                        </span>
+                        <figcaption class="nome-servico">Netflix</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li class="item-servico">
+                <a href="https://www.disneyplus.com/pt-br?gclsrc=aw.ds&cid=DSS-Search-Google-11533092612-&s_kwcid=AL!8468!3!798582264428!e!!g!!174457321395-11338870&gad_source=1&gad_campaignid=11533092612&gbraid=0AAAAACzWEUGpUNIkmSHJIllq36QdPBni0&gclid=CjwKCAjw-J3OBhBuEiwAwqZ_h6fOUyLscGZu1T_OO1XPaZX3NAYERzaxK3QiVUaYR8u9MMVTQNib0hoC8eQQAvD_BwE" class="servico">
+                    <figure class="avatar-container">
+                        <span class="imagem-perfil tema-cris" aria-hidden="true">
+                            <span class="icone-avatar">
+                                <img src="assets/disney.png" alt="Disney +" width="128px" height="128px">
+                            </span>
+                        </span>
+                        <figcaption class="nome-servico">Disney + </figcaption>
+                    </figure>
+                </a>
+            </li>
+
+        </ul>
+
     </main>
 
-    <script src="theme.js"></script>
+    <div id="video-overlay">
+        <video id="netflix-video" preload="auto" playsinline>
+            <source src="assets/netflix-intro.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
+    </div>
+
+    <script src="js/video.js"></script>
+    <script src="perfil/js/index.js"></script>
 
 </body>
 

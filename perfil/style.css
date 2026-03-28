@@ -1,0 +1,472 @@
+/* RESET GLOBAL - Remove espaçamentos padrão do navegador */
+* {
+    margin: 0;
+    /* Remove margem padrão de todos os elementos */
+    padding: 0;
+    /* Remove preenchimento padrão de todos os elementos */
+    box-sizing: border-box;
+    /* Inclui border e padding na largura/altura total */
+}
+
+/* VARIÁVEIS DE COR - Define cores reutilizáveis em toda a aplicação */
+:root {
+    --primary-black: #141414;
+    /* Cor de fundo principal (preto Netflix) */
+    --color-button: #000000;
+    /* Cor de destaque para botões (vermelho Netflix) */
+    --netflix-red: #E50914;
+    /* Cor de destaque (vermelho Netflix) */
+    --light-gray: #808080;
+    /* Cor de texto secundário (cinza claro) */
+    --white: #ffffff;
+    /* Cor de texto principal (branco) */
+}
+
+/* HTML - Configurações de suavidade na navegação */
+html {
+    scroll-behavior: smooth;
+    /* Rolagem suave em âncoras e navegação */
+}
+
+/* BODY - Estilos globais do corpo da página */
+body {
+    background-color: var(--primary-black);
+    /* Define fundo preto Netflix */
+    color: var(--white);
+    /* Define cor de texto padrão como branco */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    /* Fonte do sistema (sem carregar arquivo externo) */
+    font-size: 16px;
+    /* Tamanho de fonte padrão */
+    line-height: 1.6;
+    /* Espaçamento entre linhas para melhor legibilidade */
+}
+
+/* MAIN - Container principal que centraliza o conteúdo na tela */
+main {
+    display: flex;
+    /* Usa Flexbox para alinhar filhos */
+    flex-direction: column;
+    /* Empilha os filhos verticalmente */
+    align-items: center;
+    /* Centraliza na horizontal */
+    justify-content: center;
+    /* Centraliza na vertical */
+    min-height: 100vh;
+    /* Altura mínima de 100% da viewport */
+    padding: 20px;
+    /* Espaçamento interno */
+    padding-top: 80px; /* Adiciona espaço para o header fixo (60px + 20px de margem) */
+}
+
+
+
+/* H1 DO HEADER - Título principal da página */
+h1 {
+    font-size: 3rem;
+    /* Tamanho grande para destaque (48px) */
+    font-weight: 700;
+    /* Peso da fonte (negrito) */
+    letter-spacing: 2px;
+    /* Espaçamento entre letras */
+    color: var(--white);
+    /* Cor branca para contraste */
+}
+
+
+.lista-perfis {
+    margin-top: 40px;
+}
+
+
+
+/* REMOVE MARCADORES DE LISTA - Retira bullet dots de listas de perfis */
+ul {
+    list-style: none;
+    /* Remove o ponto dos itens da lista */
+    padding: 0;
+    /* Remove o padding padrão */
+    margin: 0;
+    /* Remove a margem padrão */
+    display: flex;
+    /* Usa flexbox para os itens */
+    flex-wrap: wrap;
+    /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center;
+    /* Centraliza os itens */
+    gap: 2rem;
+    /* Espaço entre os itens */
+}
+
+
+
+/* PROFILE - Cada card de perfil individual */
+.avatar-container {
+    display: flex; /* Usa Flexbox */
+    flex-direction: column; /* Empilha conteúdo verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    text-decoration: none; /* Remove sublinhado padrão de links */
+    cursor: pointer; /* Muda cursor para indicar que é clicável */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Anima transformações e filtros suavemente */
+    text-align: center; /* Centraliza texto */
+    color: var(--white); /* Cor do texto branco */
+}
+
+.perfil {
+    text-decoration: none;
+}
+
+
+
+figure {
+    margin: 0;
+    /* Remove margem padrão */
+    display: flex;
+    /* Usa flexbox */
+    flex-direction: column;
+    /* Organiza em coluna */
+    align-items: center;
+    /* Centraliza itens */
+}
+
+img:not(.logo) {
+    width: 200px; /* Largura fixa da imagem */
+    height: 200px; /* Altura fixa da imagem */
+    border-radius: 8px; /* Bordas arredondadas */
+    object-fit: cover; /* Mantém proporção da imagem */
+    margin-bottom: 0.5rem; /* Espaço abaixo da imagem */
+    background: #222; /* Cor de fundo da imagem */
+    display: block; /* Exibe como bloco */
+    border: 1px transparent; /* Borda inicial invisível */
+}
+
+img:not(.logo):hover {
+    border: 4px solid #fff; /* Borda branca ao passar o mouse */
+}
+
+figcaption {
+    font-size: 1.1rem; /* Tamanho da fonte da legenda */
+    font-weight: 500; /* Peso da fonte */
+    margin-top: 0.5rem; /* Espaço acima da legenda */
+    letter-spacing: 0.5px; /* Espaçamento entre letras */
+}
+/* btn-gerenciar - Estilos para o botão "Gerenciar perfis" */
+.btn-gerenciar {
+    margin-top: 40px;
+    /* Espaçamento acima do botão */
+    padding: 12px 24px;
+    /* Preenchimento interno (12px vertical, 24px horizontal) */
+    font-size: 1rem;
+    /* Tamanho da fonte (16px) */
+    font-weight: 500;
+    /* Peso médio da fonte */
+    color: var(--light-gray);
+    /* Cor cinza por padrão */
+    border: 2px solid var(--light-gray);
+    /* Borda cinza clara */
+    border-radius: 4px;
+    /* Cantos arredondados */
+    background-color: transparent;
+    /* Fundo transparente */
+    cursor: pointer;
+    /* Muda cursor para indicar que é clicável */
+    transition: color 0.3s ease, border-color 0.3s ease;
+    /* Anima mudanças de cor e borda */
+}
+
+.btn-gerenciar:hover {
+    color: var(--white);
+    /* Cor do texto muda para preto */
+    border-color: var(--white);
+    /* Borda permanece cinza claro */
+}
+
+/* Light mode */
+body.light-mode {
+    background: #f5f5f5;
+    /* Cor de fundo clara */
+    color: #222; /* Cor do texto escura */
+}
+
+.light-mode h1 {
+    color: #222;
+    /* Título escuro */
+}
+.light-mode .perfil {
+    color: #222;
+    /* Links escuros */
+}
+
+.light-mode img:not(.logo) {
+    background: #eee;
+    /* Fundo claro para imagens */
+    border: 1px solid #ccc; /* Borda clara */
+}
+
+.light-mode img:not(.logo):hover {
+    border: 4px solid var(--netflix-red);
+    /* Borda escura ao passar o mouse */
+}
+
+
+.light-mode .btn-gerenciar {
+    color: var(--light-gray);
+    /* Cor cinza para modo claro */
+    border-color: var(--light-gray);
+    /* Borda cinza para modo claro */
+}
+
+.light-mode .btn-gerenciar:hover {
+    color: var(--primary-black);
+    /* Cor do texto muda para branco no modo claro */
+    border-color: var(--primary-black);
+    /* Borda muda para branco no modo claro */
+}
+
+.light-mode header {
+    background-color: #f5f5f5;
+    /* Fundo branco para o header no modo claro */
+}
+
+.light-mode .logo {
+    background-color: #f5f5f5;
+    border: none;
+}
+
+.light-mode .nome-perfil {
+    color: #222;
+    /* Cor do texto escura para nomes de perfil no modo claro */
+}
+
+.logo {
+    
+    margin-top: 10px;
+    width: 120px;
+    height: auto;
+    left: 10px
+    
+}
+
+
+/* PARA O VÍDEO DE FUNDO - Estilos para o overlay de vídeo */
+
+/* --- NOVA LÓGICA DE FADE --- */
+
+/* Esconde o overlay por padrão, mas permitindo animação */
+#video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Novas propriedades para o efeito */
+    opacity: 0;             /* Começa totalmente invisível */
+    pointer-events: none;   /* Impede cliques enquanto invisível */
+    transition: opacity 1s ease-in-out; /* Define a animação: 1 segundo, suave */
+}
+
+/* Classe que será adicionada pelo JavaScript para mostrar o vídeo */
+#video-overlay.active {
+    opacity: 1;             /* Torna-se totalmente visível */
+    pointer-events: auto;   /* Reativa os cliques se necessário */
+}
+
+#video-overlay video {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+header {
+    position: fixed;
+    /* Fixa o header no topo da página */
+    top: 0;
+    /* Alinha ao topo */
+    left: 0;
+    /* Alinha à esquerda */
+    width: 100%;
+    /* Ocupa toda a largura */
+    height: 60px; /* Define altura fixa para o header */
+    background-color: var(--primary-black);
+    /* Fundo preto para o header */
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centraliza verticalmente os itens */
+    padding: 0 20px; /* Adiciona padding lateral */
+}
+
+.btn-theme {
+    margin-left: auto;
+    /* Empurra o botão para a direita */
+    padding: 8px 16px;
+    /* Preenchimento interno */
+    font-size: 0.9rem;
+    /* Tamanho da fonte */
+    font-weight: 500;
+    /* Peso médio da fonte */
+    color: var(--light-gray);
+    /* Cor cinza por padrão */
+    border: 1px solid var(--light-gray);
+    /* Borda cinza clara */
+    border-radius: 4px;
+    /* Cantos arredondados */
+    background-color: transparent;
+    /* Fundo transparente */
+    cursor: pointer;
+    /* Muda cursor para indicar que é clicável */
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* MEDIA QUERY - Estilos para celulares (até 575.98px de largura) */
+@media (max-width: 575.98px) {
+
+    /* Reduz padding em celulares */
+    main {
+        padding: 10px;
+        /* Menos espaçamento */
+    }
+
+    /* Reduz tamanho do h1 em celulares */
+    h1 {
+        font-size: 1.5rem;
+        /* Diminui para 24px */
+        margin-top: 20px;
+        /* Adiciona espaçamento superior */
+    }
+
+    /* Ajusta grid para celulares */
+    .profiles {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        /* Colunas ainda menores */
+        gap: 15px;
+        /* Espaçamento reduzido */
+        margin-top: 60px;
+        /* Margem menor */
+    }
+
+    /* Redimensiona imagens para celulares */
+     img:not(.logo) {
+        width: 100px;
+        /* Tamanho compacto */
+        height: 100px;
+        /* Tamanho compacto */
+    }
+
+    /* Reduz tamanho da legenda em celulares */
+     figcaption {
+        font-size: 0.9rem;
+        /* Tamanho bem menor */
+    }
+
+    .logo {
+        width: 80px;
+        height: auto;
+        left: 5px;
+        /* Logo menor e margem menor em celulares */
+    }
+
+    .btn-gerenciar {
+        margin-top: 20px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        border-width: 1px;
+    }
+
+    
+}
+
+/* MEDIA QUERY - Estilos para tablets (até 768px de largura) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    /* Reduz tamanho do h1 em tablets */
+    h1 {
+        font-size: 2rem;
+        /* Diminui para 32px */
+    }
+
+    /* Ajusta grid para tablets */
+    .profiles {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        /* Colunas menores */
+        gap: 25px;
+        /* Reduz espaçamento */
+        margin-top: 80px;
+        /* Reduz margem superior */
+    }
+
+    /* Redimensiona imagens para tablets */
+    img:not(.logo) {
+        width: 100px;
+        /* Reduz largura */
+        height: 120px;
+        /* Reduz altura */
+    }
+
+    /* Reduz tamanho da legenda em tablets */
+    figcaption {
+        font-size: 1rem;
+        /* Tamanho menor */
+    }
+
+    .logo {
+        width: 100px;
+        height: auto;
+        left: 10px;
+        /* Logo médio em tablets */
+    }
+
+    .btn-gerenciar {
+        margin-top: 30px;
+        padding: 10px 18px;
+        font-size: 0.95rem;
+        border-width: 1.5px;
+    }
+}
+
+/* MEDIA QUERY - Estilos para desktops (a partir de 992px de largura) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+    /* Aumenta o tamanho do h1 em desktops */
+    h1 {
+        font-size: 3.5rem;
+        /* Aumenta para 56px */
+    }
+
+
+    /* Redimensiona imagens para desktops */
+    img:not(.logo) {
+        width: 120px;
+        /* Aumenta largura */
+        height: 200px;
+        /* Aumenta altura */
+    }
+
+    .logo {
+        width: 120px;
+        height: auto;
+        left: 15px;
+        /* Logo maior e margem maior em desktops */
+    }
+
+    /* Aumenta tamanho da legenda em desktops */
+    figcaption {
+        font-size: 1.25rem;
+        /* Tamanho maior */
+    }
+
+    .btn-gerenciar {
+        margin-top: 40px;
+        padding: 12px 24px;
+        font-size: 1rem;
+        border-width: 2px;
+    }
+
+
+}
