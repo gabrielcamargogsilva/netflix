@@ -72,6 +72,10 @@ Trata-se de uma cópia para aprendizado, sem finalidade comercial ou uso oficial
 
 Para desenvolvimento, certifique-se de que o servidor local esteja rodando para que os caminhos relativos funcionem corretamente.
 
+## Acesse na Vercel 
+O projeto está hospedado na Vercel. Acesse em: [Link do domínio hospedado](https://netflix-xi-plum.vercel.app/) 
+
+
 ---
 
 *Desenvolvido como parte do curso/imersão de Front-End da Alura.*
